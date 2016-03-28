@@ -1,9 +1,9 @@
-<div class="container">
-
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+<div ng-controller="NavbarController">
+  <div  ng-include="'app/components/navbar/navbar.html'">
+    <!--<acme-navbar creation-date="main.creationDate"></acme-navbar>-->
   </div>
-
+</div>
+<div class="container">
   <div class="jumbotron text-center">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">
