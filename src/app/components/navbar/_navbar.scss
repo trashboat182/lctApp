@@ -3,16 +3,28 @@
 }
 
 .menu-color{
-  height: 90px;
+  background:#ffffff;;
 }
 
 .left-navbar-link{
   font-size: 1.8em;
   font-weight: 700;
-  color: #000000 !important;
   margin-top: 18px;
+  color: #000000 !important;
+  margin-left:60px;
 }
 
 .right-navbar-link{
+  font-size: 1.2em;
+  margin-top: 20px;
+  &.log-in-color{
+    color: #000000 !important;
+  }
 
+  &.register-color{
+    color: #DF053D !important;
+    margin-right:60px;
+  }
 }
+
+
