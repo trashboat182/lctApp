@@ -6,12 +6,18 @@
   background:#ffffff;;
 }
 
+.navbar{
+  margin: 0px !important;
+}
+.navbar-button-mobile{
+  margin-top:28px;
+}
+
 .left-navbar-link{
   font-size: 1.8em;
   font-weight: 700;
   margin-top: 18px;
   color: #000000 !important;
-  margin-left:60px;
 }
 
 .right-navbar-link{
@@ -23,7 +29,6 @@
 
   &.register-color{
     color: #DF053D !important;
-    margin-right:60px;
   }
 }
 

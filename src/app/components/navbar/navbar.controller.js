@@ -7,5 +7,4 @@ angular
 /** @ngInject */
 function NavbarController($scope) {
 
-
 }
