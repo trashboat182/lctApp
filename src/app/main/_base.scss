@@ -1,0 +1,36 @@
+html{
+  height:100%;
+}
+body{
+  height:100%;
+}
+.main-container{
+  overflow: hidden;
+  position: absolute;
+  background: purple;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-container{
+  z-index: 10;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.ui-view-container{
+  position: absolute;
+  top: 90px;
+  bottom: 0px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.container{
+  margin-top:50px;
+  width: 90%;
+}
+
