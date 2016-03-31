@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider, $urlRouterProvider, RestangularProvider,API_ENDPOINT) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -23,6 +23,15 @@
       });
 
     $urlRouterProvider.otherwise('/');
+
+    // configuration restangular
+    RestangularProvider.setBaseUrl(API_ENDPOINT);
+    RestangularProvider.setDefaultHeaders({
+      'Accept': 'application/json; charset=utf-8',
+      'Content-type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-cache'
+    });
+    RestangularProvider.setFullResponse(true);
   }
 
 })();
