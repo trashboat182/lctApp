@@ -7,6 +7,6 @@
     .constant('malarkey', malarkey)
     .constant('moment', moment)
     .constant('brand', 'default App')
-    .constant('API_ENDPOINT', 'http://localhost:9000');
+    .constant('API_ENDPOINT', 'http://192.168.1.2:9000');
 
 })();

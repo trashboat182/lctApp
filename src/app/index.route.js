@@ -16,9 +16,15 @@
         auth:false
       })
       .state('login', {
-        url: "/login",
-        templateUrl: "app/components/login/login/login.html",
+        url: '/login',
+        templateUrl: 'app/components/login/login/login.html',
         controller: 'LoginController',
+        auth: true
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'app/components/login/register/register.html',
+        controller: 'RegisterController',
         auth: true
       });
 

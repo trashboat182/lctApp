@@ -6,15 +6,14 @@
     .config(config);
 
   /** @ngInject */
-  function config(RestangularProvider) {
+  function config(RestangularProvider, API_ENDPOINT) {
 
     console.log('config');
     // configuration restangular
-    RestangularProvider.setBaseUrl('xyz');
+    RestangularProvider.setBaseUrl(API_ENDPOINT);
     RestangularProvider.setDefaultHeaders({
       'Accept': 'application/json; charset=utf-8',
-      'Content-type': 'application/json; charset=utf-8',
-      'Cache-Control': 'no-cache'
+      'Content-type': 'application/json; charset=utf-8'
     });
     RestangularProvider.setFullResponse(true);
   }

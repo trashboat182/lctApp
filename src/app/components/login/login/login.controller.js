@@ -5,15 +5,30 @@ angular
     .controller('LoginController', LoginController);
 
 /** @ngInject */
-function LoginController($scope) {
+function LoginController($scope, Rest) {
+
+    console.log('Login Controller');
     $scope.login = {
-      email:'',
+      username:'',
       password:''
     };
 
-    console.log('Login Controller');
     $scope.signin = function(){
-      console.log($scope.login.email);
-      console.log($scope.login.password);
+      if($scope.login.username && $scope.login.password){
+        Rest.users($scope.login.username).get().then(function(response) {
+            var user = response.data;
+            if(user){
+                if($scope.login.password===user.password){
+                    console.log('User Logged!!');
+                }
+                else{
+                    console.log('Incorrect password');
+                }
+            }
+            else{
+                console.log('User not found!');
+            }
+        });
+      }
     };
 }

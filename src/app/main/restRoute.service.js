@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('microStar').factory('MicroStar', function (Restangular) {
+angular.module('lctapp').factory('Rest', function (Restangular) {
   return {
-    user: function (user) {
-      return user ? Restangular.oneUrl('api/user/' + user) : Restangular.oneUrl('api/user');
+    users: function (user) {
+      return user ? Restangular.oneUrl('api/users/' + user) : Restangular.oneUrl('api/users');
     }
   };
 });
