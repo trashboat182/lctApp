@@ -9,7 +9,7 @@
   function config(RestangularProvider, API_ENDPOINT) {
 
     console.log('config');
-    // configuration restangular
+    // configuration Restangular
     RestangularProvider.setBaseUrl(API_ENDPOINT);
     RestangularProvider.setDefaultHeaders({
       'Accept': 'application/json; charset=utf-8',
