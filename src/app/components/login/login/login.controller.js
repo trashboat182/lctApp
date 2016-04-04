@@ -5,7 +5,7 @@ angular
     .controller('LoginController', LoginController);
 
 /** @ngInject */
-function LoginController($scope, Rest, ngDialog) {
+function LoginController($scope, Rest, ngDialog, $state, Session) {
 
     console.log('Login Controller');
     $scope.login = {
@@ -42,7 +42,15 @@ function LoginController($scope, Rest, ngDialog) {
             var user = response.data;
             if(user){
                 if($scope.login.password===user.password){
-                    console.log('User Logged!!');
+                    if(!Session.getUser){
+                        Session.createSession({
+                            username:$scope.user.username,
+                            password:$scope.user.password,
+                            email: $scope.user.email,
+                            emailAuth:false
+                        });
+                    }
+                    $state.go('dashboard');
                 }
                 else{
                     $scope.error.tittle = 'Incorrect Password';

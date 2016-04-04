@@ -38,6 +38,12 @@
         templateUrl: 'app/components/login/register/contactDataForm.html',
         controller: 'RegisterController',
         auth: true
+      })
+      .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/components/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        auth: true
       });
 
     $urlRouterProvider.otherwise('/');

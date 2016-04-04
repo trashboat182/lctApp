@@ -69,16 +69,34 @@ function RegisterController($scope, Rest, $state, Session, ngDialog) {
             $scope.user.email= localUser.email;
             $scope.user.emailAuth= localUser.emailAuth;
             console.log('user: '+ $scope.user.username);
-            Rest.users($scope.user.username).customPUT($scope.user).then(function(response) {
+            return Rest.users($scope.user.username).customPUT($scope.user).then(function(response) {
                 var data = response.data;
                 if(data){
-                    $state.go('contactForm');
+                    return true;
                 }
             })
-                .catch(function(e){
-                    $scope.error.tittle = 'Information could not be updated for user: '+$scope.user.username;
-                    $scope.showRegisterErrorDialog();
-                })
+            .catch(function(e){
+                $scope.error.tittle = 'Information could not be updated for user: '+$scope.user.username;
+                $scope.showRegisterErrorDialog();
+                return false;
+            })
+        }
+        else{
+            $scope.error.tittle = 'You must create an account first.';
+            $scope.showRegisterErrorDialog();
+            return false;
+        }
+    };
+
+    $scope.updateAgencyForm = function(){
+        if($scope.saveUserDetails()){
+            $state.go('contactForm');
+        }
+    };
+
+    $scope.updateContactDataForm = function(){
+        if($scope.saveUserDetails()){
+            $state.go('dashboard');
         }
     };
 
