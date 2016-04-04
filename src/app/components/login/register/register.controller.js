@@ -5,7 +5,7 @@ angular
     .controller('RegisterController', RegisterController);
 
 /** @ngInject */
-function RegisterController($scope, Rest, $state, Session) {
+function RegisterController($scope, Rest, $state, Session, ngDialog) {
 
     console.log('Register Controller');
     $scope.user = {
@@ -30,8 +30,18 @@ function RegisterController($scope, Rest, $state, Session) {
 
     $scope.confirmPassword ='';
 
+    $scope.error = {
+        title: '',
+        message:''
+    };
+
     $scope.register = function(){
-        if($scope.user.username && $scope.user.email && $scope.user.password){
+        if($scope.user.username && $scope.user.email && $scope.user.password && $scope.confirmPassword){
+            if($scope.user.password !== $scope.confirmPassword){
+                $scope.error.tittle = 'Passwords do not match';
+                $scope.showRegisterErrorDialog();
+                return;
+            }
             Rest.users().customPOST($scope.user).then(function(response) {
                 var data = response.data;
                 if(data){
@@ -41,13 +51,12 @@ function RegisterController($scope, Rest, $state, Session) {
                         email: $scope.user.email,
                         emailAuth:false
                     });
-                    console.log('User created!');
                     $state.go('agencyForm');
                 }
             })
             .catch(function(e){
-                console.log('User Not created ');
-                console.log(e);
+                    $scope.error.tittle = 'User Not Created';
+                    $scope.showRegisterErrorDialog();
             })
         }
     };
@@ -63,14 +72,28 @@ function RegisterController($scope, Rest, $state, Session) {
             Rest.users($scope.user.username).customPUT($scope.user).then(function(response) {
                 var data = response.data;
                 if(data){
-                    console.log('User updated 1!');
                     $state.go('contactForm');
                 }
             })
                 .catch(function(e){
-                    console.log('User Not Updated 1 ');
-                    console.log(e);
+                    $scope.error.tittle = 'Information could not be updated for user: '+$scope.user.username;
+                    $scope.showRegisterErrorDialog();
                 })
         }
+    };
+
+    $scope.showRegisterErrorDialog = function(){
+        $scope.registerErrorDialog = ngDialog.open({
+            template: 'app/components/login/register/registerError.html',
+            className: 'ngdialog-theme-default',
+            closeByEscape : true,
+            closeByDocument: true,
+            showClose: true,
+            scope: $scope
+        });
+    };
+
+    $scope.closeRegisterErrorDialog = function(){
+        $scope.registerErrorDialog.close();
     };
 }
