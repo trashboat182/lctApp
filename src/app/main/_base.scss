@@ -4,6 +4,11 @@ html{
 body{
   height:100%;
 }
+
+/* Structure */
+$header-height: 90px;
+$sidebar-width: 200px;
+
 .main-container{
   overflow: hidden;
   position: absolute;
@@ -21,12 +26,61 @@ body{
   width: 100%;
 }
 
+
+$effect-time: 0.5s;
+$effect-timing: ease-in-out;
+.sidebar {
+  z-index: 9;
+  position: absolute;
+  top: $header-height;
+  width: 0px;
+  bottom: 0px;
+  background: black;
+  overflow: hidden;
+
+  -webkit-transition: width $effect-time;
+  -moz-transition:  width $effect-time;
+  -o-transition:  width $effect-time;
+  -ms-transition:  width $effect-time;
+  transition:  width $effect-time;
+  -webkit-transition-timing-function: $effect-timing;
+  -moz-transition-timing-function: $effect-timing;
+  -o-transition-timing-function: $effect-timing;
+  -ms-transition-timing-function: $effect-timing;
+  transition-timing-function: $effect-timing;
+
+  ul li {
+    white-space: nowrap;
+  }
+
+  .main-container.expanded & {
+    width: $sidebar-width;
+  }
+}
+
 .ui-view-container{
   position: absolute;
-  top: 90px;
+  top: $header-height;
   bottom: 0px;
-  width: 100%;
+  left: 0px;
+  right: 0px;
+  //width: 100%;
   overflow-y: auto;
+
+  -webkit-transition: left $effect-time;
+  -moz-transition:  left $effect-time;
+  -o-transition:  left $effect-time;
+  -ms-transition:  left $effect-time;
+  transition:  left $effect-time;
+  -webkit-transition-timing-function: $effect-timing;
+  -moz-transition-timing-function: $effect-timing;
+  -o-transition-timing-function: $effect-timing;
+  -ms-transition-timing-function: $effect-timing;
+  transition-timing-function: $effect-timing;
+
+  .main-container.expanded & {
+    left: $sidebar-width;
+  }
 }
 
 .container{
@@ -35,3 +89,14 @@ body{
 }
 
 
+@media only screen and (max-width: 768px) and (orientation:portrait) {
+
+  .main-container.expanded {
+    .sidebar {
+
+    }
+    .ui-view-container {
+      left: 0px;
+    }
+  }
+}

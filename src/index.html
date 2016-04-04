@@ -24,13 +24,23 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="main-container">
+    <div class="main-container expanded">
 
       <div ng-controller="NavbarController" class="navbar-container">
         <div  ng-include="'app/components/navbar/navbar.html'">
           <!--<acme-navbar creation-date="main.creationDate"></acme-navbar>-->
         </div>
       </div>
+
+      <!-- Left nose q-->
+      <div class="sidebar">
+        <ul class="list-group">
+          <li class="list-group-item">First item</li>
+          <li class="list-group-item">Second item</li>
+          <li class="list-group-item">Third item</li>
+        </ul>
+      </div>
+
 
       <div ui-view class="ui-view-container"></div>
     </div>

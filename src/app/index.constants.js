@@ -6,7 +6,7 @@
     .module('lctapp')
     .constant('malarkey', malarkey)
     .constant('moment', moment)
-    .constant('brand', 'ElLocoto')
-    .constant('API_ENDPOINT', 'https://jyywwqwbch.localtunnel.me');
+    .constant('brand', 'defaultApp')
+    .constant('API_ENDPOINT', 'http://10.100.1.135:9000/');
 
 })();
