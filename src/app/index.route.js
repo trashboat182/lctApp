@@ -19,11 +19,23 @@
         url: '/login',
         templateUrl: 'app/components/login/login/login.html',
         controller: 'LoginController',
-        auth: true
+        auth: false
       })
       .state('register', {
         url: '/register',
         templateUrl: 'app/components/login/register/register.html',
+        controller: 'RegisterController',
+        auth: false
+      })
+      .state('agencyForm', {
+        url: '/agencyform',
+        templateUrl: 'app/components/login/register/agencyForm.html',
+        controller: 'RegisterController',
+        auth: true
+      })
+      .state('contactForm', {
+        url: '/contactform',
+        templateUrl: 'app/components/login/register/contactDataForm.html',
         controller: 'RegisterController',
         auth: true
       });

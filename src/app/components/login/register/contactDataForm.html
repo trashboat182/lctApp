@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="card card-container">
+        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+        <h2>Informacion para contactarnos</h2>
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin">
+            <div class="form-group">
+                <textarea ng-model="user.address" class="form-control" rows="5" id="comment" placeholder="Describe la dirección exácta"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                    <input ng-model="user.telephone" type="text" class="form-control" placeholder="Telefono central:" required>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <input ng-model="user.fax" type="text" class="form-control" placeholder="Fax:" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                    <input ng-model="user.emailSecundary" type="text" class="form-control" placeholder="Correo electrónico:" required>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <input ng-model="user.webpage" type="text" class="form-control" placeholder="Pagina web:" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                    <input ng-model="user.facebookAccount" type="text" class="form-control" placeholder="Facebook.com/tuagencia:" required>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <input ng-model="user.otherAccount" type="text" class="form-control" placeholder="Otra red social:" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <button style="margin-left: 45% !important;" type="button" class="btn btn-danger btn-circle btn-xl" ng-click="saveUserDetails()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+            </div>
+        </form><!-- /form -->
+    </div><!-- /card-container -->
+
+</div>

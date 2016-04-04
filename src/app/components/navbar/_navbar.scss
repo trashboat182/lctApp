@@ -17,18 +17,18 @@
   font-size: 1.8em;
   font-weight: 700;
   margin-top: 18px;
-  color: #000000 !important;
+  color: $black !important;
 }
 
 .right-navbar-link{
   font-size: 1.2em;
   margin-top: 20px;
   &.log-in-color{
-    color: #000000 !important;
+    color: $black !important;
   }
 
   &.register-color{
-    color: #DF053D !important;
+    color: $red-pink !important;
   }
 }
 

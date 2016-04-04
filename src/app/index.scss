@@ -34,6 +34,12 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // injector
 // endinjector
 
+
+/* Colour Variable Library */
+@import "../app/main/_colours";
+@import "../app/main/_fonts";
+@import "../app/main/_components";
+
 /* COMPONENTS */
 /* Navbar  */
 @import "../app/main/_base";
