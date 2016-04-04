@@ -42,11 +42,11 @@ function LoginController($scope, Rest, ngDialog, $state, Session) {
             var user = response.data;
             if(user){
                 if($scope.login.password===user.password){
-                    if(!Session.getUser){
+                    if(!Session.getUser()){
                         Session.createSession({
-                            username:$scope.user.username,
-                            password:$scope.user.password,
-                            email: $scope.user.email,
+                            username:$scope.login.username,
+                            password:$scope.login.password,
+                            email: $scope.login.email,
                             emailAuth:false
                         });
                     }
