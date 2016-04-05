@@ -5,7 +5,9 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope,brand) {
+  function MainController($scope,$state,brand) {
+
     $scope.brand=brand;
+    $scope.uiRouterState = $state;
 
   }

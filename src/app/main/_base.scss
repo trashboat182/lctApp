@@ -100,3 +100,37 @@ $effect-timing: ease-in-out;
     }
   }
 }
+
+.show-table {
+  background: red;
+  display: table;
+  width: 100%;
+  .show-row {
+    display: table-row;
+  }
+  .show-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+.text-top {
+  vertical-align: top !important;
+}
+
+.col-right {
+  padding-right: 0px !important;
+}
+
+.smart-row-y {
+  margin: 8px 0px 8px;
+}
+
+.bottom-zero {
+  margin-bottom: 0px !important;
+}
+
+.col-left {
+  padding-left: 0px !important;
+}
