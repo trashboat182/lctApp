@@ -1,0 +1,45 @@
+.show-table {
+  display: table;
+  width: 100%;
+  .show-row {
+    display: table-row;
+  }
+  .show-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+.text-top {
+  vertical-align: top !important;
+}
+
+.col-right {
+  padding-right: 0px !important;
+}
+
+.smart-row-y {
+  margin: 8px 0px 8px;
+}
+
+.bottom-zero {
+  margin-bottom: 0px !important;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.col-left {
+  padding-left: 0px !important;
+}
+
+.label-centered{
+  text-align: center
+}
+
+.button-bottom{
+  margin-bottom:10px;
+}
