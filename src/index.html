@@ -26,14 +26,14 @@
 
     <div class="main-container" ng-class="{'expanded': uiRouterState.current.name === 'dashboard'}">
 
-      <div ng-controller="NavbarController" class="navbar-container">
+      <div ng-controller="NavbarController" class="navbar-container" ng-if="uiRouterState.current.name !== 'dashboard'">
         <div  ng-include="'app/components/navbar/navbar.html'">
           <!--<acme-navbar creation-date="main.creationDate"></acme-navbar>-->
         </div>
       </div>
 
       <!-- Left nose q-->
-      <div class="sidebar">
+      <div class="sidebar" ng-class="{'sidebar-no-navbar': uiRouterState.current.name === 'dashboard'}">
         <ul class="list-group">
           <li class="list-group-item">First item</li>
           <li class="list-group-item">Second item</li>
@@ -41,7 +41,7 @@
         </ul>
       </div>
 
-      <div ui-view class="ui-view-container"></div>
+      <div ui-view class="ui-view-container" ng-class="{'ui-view-container-no-navbar': uiRouterState.current.name === 'dashboard'}"></div>
 
     </div>
 

@@ -7,7 +7,7 @@ body{
 
 /* Structure */
 $header-height: 90px;
-$sidebar-width: 200px;
+$sidebar-width: 220px;
 
 .main-container{
   overflow: hidden;
@@ -30,32 +30,36 @@ $sidebar-width: 200px;
 $effect-time: 0.5s;
 $effect-timing: ease-in-out;
 .sidebar {
-  z-index: 9;
-  position: absolute;
-  top: $header-height;
-  width: 0px;
-  bottom: 0px;
-  background: black;
-  overflow: hidden;
+   z-index: 9;
+   position: absolute;
+   top: $header-height;
+   width: 0px;
+   bottom: 0px;
+   background: black;
+   overflow: hidden;
 
-  -webkit-transition: width $effect-time;
-  -moz-transition:  width $effect-time;
-  -o-transition:  width $effect-time;
-  -ms-transition:  width $effect-time;
-  transition:  width $effect-time;
-  -webkit-transition-timing-function: $effect-timing;
-  -moz-transition-timing-function: $effect-timing;
-  -o-transition-timing-function: $effect-timing;
-  -ms-transition-timing-function: $effect-timing;
-  transition-timing-function: $effect-timing;
+   -webkit-transition: width $effect-time;
+   -moz-transition:  width $effect-time;
+   -o-transition:  width $effect-time;
+   -ms-transition:  width $effect-time;
+   transition:  width $effect-time;
+   -webkit-transition-timing-function: $effect-timing;
+   -moz-transition-timing-function: $effect-timing;
+   -o-transition-timing-function: $effect-timing;
+   -ms-transition-timing-function: $effect-timing;
+   transition-timing-function: $effect-timing;
 
-  ul li {
-    white-space: nowrap;
-  }
+   ul li {
+     white-space: nowrap;
+   }
 
-  .main-container.expanded & {
-    width: $sidebar-width;
-  }
+   .main-container.expanded & {
+     width: $sidebar-width;
+   }
+ }
+
+.sidebar-no-navbar{
+  top: 0;
 }
 
 .ui-view-container{
@@ -81,6 +85,10 @@ $effect-timing: ease-in-out;
   .main-container.expanded & {
     left: $sidebar-width;
   }
+}
+
+.ui-view-container-no-navbar{
+  top: 0;
 }
 
 .container{
