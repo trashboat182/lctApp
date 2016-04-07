@@ -32,13 +32,10 @@
         </div>
       </div>
 
-      <!-- Left nose q-->
-      <div class="sidebar" ng-class="{'sidebar-no-navbar': uiRouterState.current.name === 'dashboard'}">
-        <ul class="list-group">
-          <li class="list-group-item">First item</li>
-          <li class="list-group-item">Second item</li>
-          <li class="list-group-item">Third item</li>
-        </ul>
+      <div ng-controller="LeftSidebarController" class="sidebar" ng-class="{'sidebar-no-navbar': uiRouterState.current.name === 'dashboard'}">
+        <div ng-include="'app/components/left-sidebar/left-sidebar.html'" style="height:80%">
+          <!--<acme-navbar creation-date="main.creationDate"></acme-navbar>-->
+        </div>
       </div>
 
       <div ui-view class="ui-view-container" ng-class="{'ui-view-container-no-navbar': uiRouterState.current.name === 'dashboard'}"></div>
@@ -60,7 +57,7 @@
 
     <script src="app/components/login/login/login.controller.js"></script>
     <script src="app/components/login/register/register.controller.js"></script>
-    <script src="app/components/dashboard/dashboar.controller.js"></script>
+    <script src="app/components/dashboard/dashboard.controller.js"></script>
     <script src="app/components/session/session.service.js"></script>
     <!-- angular templates will be automatically converted in js and inserted here -->
     <!-- endinject -->
