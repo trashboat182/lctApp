@@ -62,4 +62,13 @@ function DashboardController($scope,brand,ngDialog) {
       $scope.showUploadImage();
     };
 
+    $scope.uploadVideo =function(){
+      $scope.closeUploadDialog();
+      $scope.showUploadVideo();
+    };
+
+    $scope.uploadMusik =function(){
+      $scope.closeUploadDialog();
+      $scope.showUploadMusik();
+    };
 }

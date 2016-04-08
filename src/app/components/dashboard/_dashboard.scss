@@ -1,3 +1,36 @@
+/* IMAGES */
+.thumb {
+  margin-bottom: 30px;
+}
+
+.thumbnail {
+  height: auto !important;
+}
+
+.thumbnail > img, .thumbnail a > img {
+  width: 400px;
+  height: 300px;
+}
+
+.inner-navbar{
+  background: black;
+  height: 60px;
+}
+
+.inner-row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* DASHBOARD */
+
+.close-session{
+  color: $white;
+  font-size:0.6em;
+}
+
+/*NG-DIALOGS*/
+
 .ngdialog.ngdialog-dashboard .ngdialog-content {
   width: 100% !important;
   position:absolute !important;

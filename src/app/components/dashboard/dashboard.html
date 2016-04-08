@@ -1,33 +1,12 @@
 <style>
-  .thumb {
-      margin-bottom: 30px;
-  }
 
-  .thumbnail {
-      height: auto !important;
-  }
-
-  .thumbnail > img, .thumbnail a > img {
-      width: 400px;
-      height: 300px;
-  }
-
-  .inner-navbar{
-    background: black;
-    height: 60px;
-  }
-
-  .inner-row{
-    margin-left: 0px;
-    margin-right: 0px;
-  }
 </style>
 
 <div class="inner-navbar">
   <div class="row inner-row">
     <div class="col-lg-12">
       <h3 class="show-table">
-        <span class="show-cell text-right">Close Sssn</span>
+        <span class="show-cell text-right close-session">Cerrar Sesion</span>
       </h3>
     </div>
   </div>
@@ -39,7 +18,7 @@
     <div class="col-lg-12">
       <h3 class="show-table">
         <span class="show-cell text-right">
-          <button class="btn btn-danger" ng-click="uploadMusik()">Upload</button>
+          <button class="btn btn-danger" ng-click="showUploadDialog()">Upload</button>
         </span>
       </h3>
     </div>
