@@ -1,13 +1,57 @@
 .sidebar-container{
-
+  overflow-y: auto;
+  height:100%
 }
 .sidebar-header{
-  height: 200px;
-  background: green;
+  height: 150px;
+  background: $dark-red;
 }
 
-.sidebar-body{
-  overflow-y: auto;
-  height: 100%;
-  background: red;
+/*HEADER*/
+.sidebar-header-image{
+  margin-top:15px;
 }
+
+.sidebar-header-text{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sidebar-title{
+  font-size: 13px;
+  color: $white;
+}
+
+.sidebar-image{
+  width: 80px !important;
+  height: 80px !important;
+}
+
+/*BODY*/
+
+
+.sidebar-body{
+  //  overflow-y: auto;
+  height: 62%;
+  background: $light-red;
+  .list-group.inner li{
+    border:none;
+    background: $light-red;
+
+  }
+
+  .list-group-item {
+    background: $light-red;
+    border:none;
+    padding-bottom: 1px;
+    font-size: 1.05em;
+  }
+
+  .list-group {
+    margin-bottom: 10px;
+    color: $white;
+  }
+}
+
