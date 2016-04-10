@@ -24,8 +24,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="main-container" ng-class="{'expanded': uiRouterState.current.name === 'dashboard'}">
-
+    <div class="main-container" ng-class="{'expanded': uiRouterState.current.name === 'dashboard' && sidebar.status}">
       <div ng-controller="NavbarController" class="navbar-container" ng-if="uiRouterState.current.name !== 'dashboard'">
         <div  ng-include="'app/components/navbar/navbar.html'">
           <!--<acme-navbar creation-date="main.creationDate"></acme-navbar>-->

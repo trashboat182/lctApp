@@ -9,6 +9,12 @@ function DashboardController($scope,brand,ngDialog) {
 
     console.log('dashboard');
 
+
+    $scope.toggleSidebar = function(){
+       console.log('togglesidebar');
+       $scope.sidebar.status = !$scope.sidebar.status;
+    };
+
     $scope.showUploadDialog = function(){
       $scope.dashboardOptionsDialog = ngDialog.open({
         template: 'app/components/dashboard/uploadFileDialog.html',
@@ -38,6 +44,7 @@ function DashboardController($scope,brand,ngDialog) {
         closeByEscape : true,
         closeByDocument: true,
         showClose: true,
+        //overlay: false,
         scope: $scope
       });
     };

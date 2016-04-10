@@ -8,6 +8,9 @@
   function MainController($scope,$state,brand) {
 
     $scope.brand=brand;
+    $scope.sidebar = {
+        status : false
+    };
     $scope.uiRouterState = $state;
 
   }

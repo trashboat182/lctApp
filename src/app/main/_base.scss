@@ -101,16 +101,28 @@ $effect-timing: ease-in-out;
   background: rgba(0, 0, 0, 0.8);
 }
 
-@media only screen and (max-width: 768px) {
+//@media only screen and (max-width: 768px) and (orientation:portrait){
+@media only screen and (max-width: 768px){
 
   .main-container.expanded {
     .sidebar {
-      width: 0px;
+      //width: 0px;
     }
     .ui-view-container {
       left: 0px;
     }
   }
+  .close-session{
+    display: none !important;
+  }
 }
 
+.ngdialog-content {
+  z-index: 10001;
+}
+
+.ngdialog.ngdialog-theme-default {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 

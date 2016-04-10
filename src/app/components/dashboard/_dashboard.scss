@@ -22,6 +22,17 @@
   margin-right: 0px;
 }
 
+/*SIDEBAR TOGGLE*/
+.sidebar-toggle{
+  background: $black;
+  border: 1px solid $white;
+  margin-top: 13px;
+}
+
+.sidebar-toggle-icon{
+  background: $white;
+}
+
 /* DASHBOARD */
 
 .close-session{
@@ -35,7 +46,7 @@
   width: 100% !important;
   position:absolute !important;
   top:0px !important;
-  bottom: 0px;
+  //bottom: 0px;
 }
 
 .ngdialog-label{
@@ -43,7 +54,7 @@
 }
 
 .ngdialog-upload-container{
-  margin-top:100px;
+  //margin-top:100px;
 }
 
 .ngdialog-image-container{
