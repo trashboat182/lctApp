@@ -117,6 +117,7 @@ $effect-timing: ease-in-out;
   }
 }
 
+/*NG- DIALOG*/
 .ngdialog-content {
   z-index: 10001;
 }
@@ -126,3 +127,19 @@ $effect-timing: ease-in-out;
   padding-bottom: 0px;
 }
 
+/*BUTTONS*/
+.hand{
+  cursor: pointer;
+}
+
+.btn {
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  cursor: pointer !important;
+  &:hover {
+
+  }
+}
