@@ -34,5 +34,9 @@
         $state.go('home');
     };
 
+    $scope.file = {
+      value:''
+    };
+
     $scope.initialize();
   }
