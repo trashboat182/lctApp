@@ -5,7 +5,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope,$state,brand,Session) {
+  function MainController($scope,$state,brand,Session,fileUploadService,API_ENDPOINT) {
 
     $scope.uiRouterState = $state;
     $scope.brand=brand;
@@ -37,6 +37,15 @@
     $scope.file = {
       value:''
     };
+
+      $scope.sendFile = function(){
+          console.log($scope.file.value);
+          var file = $scope.file.value;
+          var uploadUrl = API_ENDPOINT+'/upload'
+          fileUploadService.uploadFileToUrl(file,uploadUrl,function(){
+            console.log('file uploaded');
+          });
+      };
 
     $scope.initialize();
   }
