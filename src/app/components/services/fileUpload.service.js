@@ -1,8 +1,8 @@
 'use strict';
 //global window, Blob, FileReader
 
-angular.module('lctapp').service('fileUploadService',function () {
-    this.uploadFileToUrl = function(modelFile, uploadUrl,success,error){
+angular.module('lctapp').service('fileUploadService',function ($q) {
+    this.uploadFileToUrl = function(modelFile, uploadUrl){
         //HTTP
         /*var deferred = $q.defer();
          var fd = new FormData();
@@ -15,6 +15,7 @@ angular.module('lctapp').service('fileUploadService',function () {
          .error(deferred.resolve);
          return deferred.promise;*/
 
+        var deferred = $q.defer();
         //XHR
         var fd = new FormData();
         fd.append('file', modelFile);
@@ -40,17 +41,16 @@ angular.module('lctapp').service('fileUploadService',function () {
         xhr.onreadystatechange = function(){
             if ( xhr.readyState === 4 ) {
                 if ( xhr.status === 200 ) {
-                    success();
-                } else {
-                    error();
+                    deferred.resolve();
                 }
             }
         };
         xhr.onerror = function () {
-            //console.log('on error');
-            //error(xhr, xhr.status);
+            console.log('on error');
+            deferred.reject();
         };
         xhr.send(fd);
+        return deferred.promise;
     };
 });
 

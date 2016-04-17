@@ -5,7 +5,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope,$state,brand,Session,fileUploadService,API_ENDPOINT) {
+  function MainController($scope,$state,brand,Session,fileUploadService,API_ENDPOINT,Rest) {
 
     $scope.uiRouterState = $state;
     $scope.brand=brand;
@@ -42,9 +42,23 @@
           console.log($scope.file.value);
           var file = $scope.file.value;
           var uploadUrl = API_ENDPOINT+'/upload'
-          fileUploadService.uploadFileToUrl(file,uploadUrl,function(){
-            console.log('file uploaded');
-          });
+          fileUploadService.uploadFileToUrl(file,uploadUrl).then(function(){
+             console.log('uploaded succesfully');
+              var user = Session.getUser();
+              var file = {
+                  name: 'firstFile'
+              };
+              Rest.registerImage(user.username).customPUT(file).then(function(){
+                  console.log('file Saved');
+              })
+              .catch(function(e){
+                      console.log('file NOT Saved');
+                      console.log(e);
+              })
+          })
+          .catch(function(){
+              console.log('uploaded failed');
+          })
       };
 
     $scope.initialize();
