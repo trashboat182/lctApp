@@ -20,20 +20,21 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
       age: 18
     };
 
-    fileUploadService.uploadFileToUrl(file,uploadUrl).then(function(){
-      console.log('uploaded succesfully');
+    fileUploadService.uploadFileToUrl(file,uploadUrl).then(function(response){
       var user = Session.getUser();
       var fileObj = $scope.video;
-      //Rest.registerImage(user.username).customPUT($scope.videoFile).then(function(){
-      //  console.log('file Saved');
-      //})
-      //.catch(function(e){
-      //  console.log('file NOT Saved');
-      //  console.log(e);
-      //})
+      fileObj.videoFile = JSON.parse(response);
+      Rest.registerImage(user.username).customPUT($scope.videoFile).then(function(){
+        console.log('file Saved');
+      })
+      .catch(function(e){
+        console.log('file NOT Saved');
+        console.log(e);
+      })
     })
-      .catch(function(){
+      .catch(function(e){
         console.log('uploaded failed');
+        console.log(e);
       })
 
   };

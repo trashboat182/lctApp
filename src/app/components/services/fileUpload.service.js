@@ -31,7 +31,7 @@ angular.module('lctapp').service('fileUploadService',function ($q) {
                 //addLogs('uploading file : ' + done + ' bytes of ' + total + ' bytes = ' + (Math.floor(done/total*1000)/10) + '%');
             };
         }
-        xhr.onreadystatechange = function(e) {
+        xhr.onreadystatechange = function() {
             if ( 4 === this.readyState ) {
                 console.log(['xhr upload complete', e]);
             }
@@ -41,13 +41,12 @@ angular.module('lctapp').service('fileUploadService',function ($q) {
         xhr.onreadystatechange = function(){
             if ( xhr.readyState === 4 ) {
                 if ( xhr.status === 200 ) {
-                    deferred.resolve();
+                    deferred.resolve(xhr.responseText);
                 }
             }
         };
-        xhr.onerror = function () {
-            console.log('on error');
-            deferred.reject();
+        xhr.onerror = function (e) {
+            deferred.reject(e.type);
         };
         xhr.send(fd);
         return deferred.promise;
