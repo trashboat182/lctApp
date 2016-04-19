@@ -61,5 +61,10 @@
           })
       };
 
+    /** DELETE this, when debug by console is no longer needed*/
+    $scope.println = function(element){
+      console.log(JSON.stringify(element,null,4));
+    };
+
     $scope.initialize();
   }

@@ -5,13 +5,12 @@ angular
     .controller('DashboardController', DashboardController);
 
 /** @ngInject */
-function DashboardController($scope,brand,ngDialog) {
+function DashboardController($scope,brand,ngDialog,API_ENDPOINT) {
 
     console.log('dashboard');
 
 
     $scope.toggleSidebar = function(){
-       console.log('togglesidebar');
        $scope.sidebar.status = !$scope.sidebar.status;
     };
 
@@ -39,13 +38,13 @@ function DashboardController($scope,brand,ngDialog) {
 
     $scope.showUploadVideo = function(){
       $scope.dashboardVideoDialog = ngDialog.open({
-        template: 'app/components/dashboard/uploadVideoDialog.html',
+        template: 'app/components/dashboard/videos/uploadVideoDialog.html',
         className: 'ngdialog-theme-default ngdialog-transparent ngdialog-dashboard',
         closeByEscape : true,
         closeByDocument: true,
         showClose: true,
         //overlay: false,
-        scope: $scope
+        controller: 'uploadVideoController'
       });
     };
 

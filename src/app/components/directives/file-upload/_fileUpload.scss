@@ -14,7 +14,13 @@
   filter: alpha(opacity=0);
   opacity: 0;
   outline: none;
-  background: red;
   cursor: inherit;
   display: block;
+}
+.group-file{
+  margin-bottom: 10px !important;
+
+}
+.file-input{
+  height: 34px !important;
 }
