@@ -7,7 +7,8 @@ angular.module('lctapp').directive('fileUpload', function() {
     transclude: true,
     scope: {
       ngModel:'=',
-      fileType:'@'
+      fileType:'@',
+      placeholder: '@'
     },
     templateUrl: 'app/components/directives/file-upload/fileUpload.html',
     link: function(scope, $element) {

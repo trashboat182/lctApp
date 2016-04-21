@@ -13,75 +13,75 @@
     <form class="form-horizontal form-input" role="form">
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.title" type="text" class="form-control ngdialog-input-form" placeholder="Titulo">
+          <input ng-model="video.title" type="text" class="form-control ngdialog-input-form" placeholder="Titulo" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div>
-          <!--<input ng-model="video.file" type="text" class="form-control ngdialog-input-form" placeholder="Copiar URL DE Vimeo">-->
           <file-upload
             ng-model="videoFile"
-            file-type="">
+            file-type=""
+            placeholder="Upload video">
           </file-upload>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.emision" type="text" class="form-control ngdialog-input-form" placeholder="Emision o implementacion">
+          <input ng-model="video.emision" type="text" class="form-control ngdialog-input-form" placeholder="Emision o implementacion" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.campaign" type="text" class="form-control ngdialog-input-form" placeholder="Alcance de la campaña">
+          <input ng-model="video.campaign" type="text" class="form-control ngdialog-input-form" placeholder="Alcance de la campaña" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.agency" type="text" class="form-control ngdialog-input-form" placeholder="Agencia">
+          <input ng-model="video.agency" type="text" class="form-control ngdialog-input-form" placeholder="Agencia" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.announcer" type="text" class="form-control ngdialog-input-form" placeholder="Anunciante">
+          <input ng-model="video.announcer" type="text" class="form-control ngdialog-input-form" placeholder="Anunciante" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.creativeDirector" type="text" class="form-control ngdialog-input-form" placeholder="Director general creativo">
+          <input ng-model="video.creativeDirector" type="text" class="form-control ngdialog-input-form" placeholder="Director general creativo" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.artDirector" type="text" class="form-control ngdialog-input-form" placeholder="Director de arte">
+          <input ng-model="video.artDirector" type="text" class="form-control ngdialog-input-form" placeholder="Director de arte" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.designer" type="text" class="form-control ngdialog-input-form" placeholder="Diseñador">
+          <input ng-model="video.designer" type="text" class="form-control ngdialog-input-form" placeholder="Diseñador" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.production" type="text" class="form-control ngdialog-input-form" placeholder="Produccion">
+          <input ng-model="video.production" type="text" class="form-control ngdialog-input-form" placeholder="Produccion" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.illustration" type="text" class="form-control ngdialog-input-form" placeholder="Ilustracion">
+          <input ng-model="video.illustration" type="text" class="form-control ngdialog-input-form" placeholder="Ilustracion" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.redactor" type="text" class="form-control ngdialog-input-form" placeholder="Redactor">
+          <input ng-model="video.redactor" type="text" class="form-control ngdialog-input-form" placeholder="Redactor" required>
         </div>
       </div>
       <div class="form-group no-bottom-form">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-          <input ng-model="video.responsible" type="text" class="form-control ngdialog-input-form" placeholder="Responsable de cuenta">
+          <input ng-model="video.responsible" type="text" class="form-control ngdialog-input-form" placeholder="Responsable de cuenta" required>
         </div>
       </div>
       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
-        <button class="btn btn-block btn-danger full-col ngdialog-submit-form" ng-click="saveVideo()">Subir Video</button>
+        <button class="btn btn-block btn-danger full-col ngdialog-submit-form" ng-click="saveVideo()">Subir Video</button >
       </div>
     </form>
   </div>

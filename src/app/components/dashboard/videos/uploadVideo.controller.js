@@ -14,17 +14,13 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
     var file = $scope.videoFile;
     var uploadUrl = API_ENDPOINT+'/upload';
 
-    var fileObj = $scope.video;
-    fileObj.videoFile = {
-      name: 'abcd',
-      age: 18
-    };
-
     fileUploadService.uploadFileToUrl(file,uploadUrl).then(function(response){
       var user = Session.getUser();
       var fileObj = $scope.video;
       fileObj.videoFile = JSON.parse(response);
-      Rest.registerImage(user.username).customPUT($scope.videoFile).then(function(){
+      console.log('fileObj');
+      console.log(fileObj);
+      Rest.registerImage(user.username).customPUT(fileObj).then(function(){
         console.log('file Saved');
       })
       .catch(function(e){
@@ -32,10 +28,10 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
         console.log(e);
       })
     })
-      .catch(function(e){
-        console.log('uploaded failed');
-        console.log(e);
-      })
+    .catch(function(e){
+      console.log('uploaded failed');
+      console.log(e);
+    })
 
   };
 }
