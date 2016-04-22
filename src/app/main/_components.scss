@@ -37,7 +37,7 @@ input[type=text],{
   font-family: 'gotham-rnd-ligth';
   border-radius: 6px;
   color: #202020 ;
-  $placeholder-color : green;
+  $placeholder-color : 	#707070   ;
   @include placeholder($placeholder-color);
 }
 
