@@ -7,6 +7,7 @@ angular
 /** @ngInject */
 function DashboardController($scope,ngDialog) {
 
+  console.log('dashboard controller ');
     $scope.toggleSidebar = function(){
        $scope.sidebar.status = !$scope.sidebar.status;
     };
