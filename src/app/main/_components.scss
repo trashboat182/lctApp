@@ -22,7 +22,9 @@ input[type=text],{
   }
 }
 
-.form-input input{
+.form-input input[type=email],
+input[type=password],
+input[type=text]{
   direction: ltr;
   height: 44px;
   font-size: 0.9em !important;
