@@ -10,6 +10,12 @@ angular.module('lctapp').factory('Rest', function (Restangular) {
     },
     registerImage: function(user){
       return user ? Restangular.oneUrl('api/file/image/' + user) : Restangular.oneUrl('api/file/image');
+    },
+    registerMusic: function(user){
+      return user ? Restangular.oneUrl('api/file/music/' + user) : Restangular.oneUrl('api/file/music');
+    },
+    registerVideo: function(user){
+      return user ? Restangular.oneUrl('api/file/video/' + user) : Restangular.oneUrl('api/file/video');
     }
-  };
+   };
 });

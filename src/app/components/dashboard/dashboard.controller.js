@@ -47,7 +47,7 @@ function DashboardController($scope,ngDialog) {
     };
 
     $scope.showUploadMusik = function(){
-      $scope.dashboardMusikDialog = ngDialog.open({
+      $scope.dashboardMusicDialog = ngDialog.open({
         template: 'app/components/dashboard/uploadMusikDialog.html',
         className: 'ngdialog-theme-default ngdialog-transparent ngdialog-dashboard',
         closeByEscape : true,
