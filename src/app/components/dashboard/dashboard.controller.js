@@ -41,7 +41,8 @@ function DashboardController($scope,ngDialog) {
         closeByDocument: true,
         showClose: true,
         //overlay: false,
-        controller: 'uploadVideoController'
+        controller: 'uploadVideoController',
+        scope: $scope
       });
     };
 

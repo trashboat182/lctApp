@@ -5,7 +5,7 @@ angular
   .controller('uploadVideoController', UploadVideoController);
 
 /** @ngInject */
-function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Rest) {
+function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Rest,ngDialog,$timeout) {
   console.log('upload video ctrl');
   $scope.video = {
       title: '',
@@ -29,6 +29,17 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
          return obj[key] === '';
        });
    };
+
+  $scope.showSuccessVideoSaved = function(){
+    $scope.successVideoSaved = ngDialog.open({
+      template: 'app/components/dashboard/videos/successVideoSaved.html',
+      className: 'ngdialog-theme-default',
+      closeByEscape : false,
+      closeByDocument: false,
+      showClose: false,
+      scope: $scope
+    });
+  };
 
    $scope.saveVideo = function(){
 
@@ -58,6 +69,12 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
           var user = Session.getUser();
           Rest.registerImage(user.username).customPUT($scope.video).then(function(){
               console.log('file Saved');
+              $scope.dashboardVideoDialog.close();
+              $scope.showSuccessVideoSaved();
+              $timeout(function(){
+                $scope.successVideoSaved.close();
+              },1500);
+
           })
               .catch(function(e){
                   console.log('file NOT Saved');
