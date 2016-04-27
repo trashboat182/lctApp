@@ -1,8 +1,11 @@
+$placeholder-color : 	#707070;
+
 textarea{
   resize: none;
-  font-size: 16px !important;
+  font-size: 0.9em !important;
+  font-family: 'gotham-rnd-ligth';
+  @include placeholder-textarea($placeholder-color);
 }
-
 
 .form-signin{
 input[type=email],
@@ -39,7 +42,6 @@ input[type=text]{
   font-family: 'gotham-rnd-ligth';
   border-radius: 6px;
   color: #202020 ;
-  $placeholder-color : 	#707070   ;
   @include placeholder($placeholder-color);
 }
 

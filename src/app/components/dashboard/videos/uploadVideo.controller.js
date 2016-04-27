@@ -54,8 +54,6 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
 //      console.log(e);
 //    })
 
-       console.log($scope.emptyObjValueExists());
-       console.log(JSON.stringify($scope.video,null,4));
       if(!$scope.emptyObjValueExists()){
           var user = Session.getUser();
           Rest.registerImage(user.username).customPUT($scope.video).then(function(){

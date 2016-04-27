@@ -14,3 +14,18 @@
     color: $color;
   }
 }
+
+@mixin placeholder-textarea($color2) {
+  &::-webkit-input-placeholder {
+    color: $color2 !important;
+  }
+  &:-moz-placeholder{
+    color: $color2 !important;
+  }
+  &::-moz-placeholder{
+    color: $color2 !important;
+  }
+  &:-ms-input-placeholder{
+    color: $color2 !important;
+  }
+}

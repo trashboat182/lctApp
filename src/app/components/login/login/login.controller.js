@@ -7,7 +7,6 @@ angular
 /** @ngInject */
 function LoginController($scope, Rest, ngDialog, $state, Session) {
 
-    console.log('Login Controller');
     $scope.login = {
       username:'',
       password:''

@@ -34,33 +34,6 @@
         $state.go('home');
     };
 
-    $scope.file = {
-      value:''
-    };
-
-      $scope.sendFile = function(){
-          console.log($scope.file.value);
-          var file = $scope.file.value;
-          var uploadUrl = API_ENDPOINT+'/upload'
-          fileUploadService.uploadFileToUrl(file,uploadUrl).then(function(){
-             console.log('uploaded succesfully');
-              var user = Session.getUser();
-              var file = {
-                  name: 'firstFile'
-              };
-              Rest.registerImage(user.username).customPUT(file).then(function(){
-                  console.log('file Saved');
-              })
-              .catch(function(e){
-                      console.log('file NOT Saved');
-                      console.log(e);
-              })
-          })
-          .catch(function(){
-              console.log('uploaded failed');
-          })
-      };
-
     /** DELETE this, when debug by console is no longer needed*/
     $scope.println = function(element){
       console.log(JSON.stringify(element,null,4));

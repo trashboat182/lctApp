@@ -7,7 +7,6 @@ angular
 /** @ngInject */
 function RegisterController($scope, Rest, $state, Session, ngDialog) {
 
-    console.log('Register Controller');
     $scope.user = {
         username:'',
         email: '',
