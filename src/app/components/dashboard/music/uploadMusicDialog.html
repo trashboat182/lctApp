@@ -1,10 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="container ngdialog-image-container" >
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="show-table">
+          <span class="show-cell label-centered ngdialog-label">
+            Music
+          </span>
+            </h3>
+        </div>
+    </div>
 
-</body>
-</html>
+    <div class="row">
+        <form class="form-horizontal form-input" role="form">
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.title" type="text" class="form-control ngdialog-input-form" placeholder="Titulo" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.music" type="text" class="form-control ngdialog-input-form" placeholder="Copiar URL de Video - VIMEO" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.emision" type="text" class="form-control ngdialog-input-form" placeholder="Emision o implementacion" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.campaign" type="text" class="form-control ngdialog-input-form" placeholder="Alcance de la campaña" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.agency" type="text" class="form-control ngdialog-input-form" placeholder="Agencia" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.announcer" type="text" class="form-control ngdialog-input-form" placeholder="Anunciante" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.creativeDirector" type="text" class="form-control ngdialog-input-form" placeholder="Director general creativo" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.artDirector" type="text" class="form-control ngdialog-input-form" placeholder="Director de arte" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.designer" type="text" class="form-control ngdialog-input-form" placeholder="Diseñador" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.production" type="text" class="form-control ngdialog-input-form" placeholder="Produccion" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.illustration" type="text" class="form-control ngdialog-input-form" placeholder="Ilustracion" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.redactor" type="text" class="form-control ngdialog-input-form" placeholder="Redactor" required>
+                </div>
+            </div>
+            <div class="form-group no-bottom-form">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                    <input ng-model="music.responsible" type="text" class="form-control ngdialog-input-form" placeholder="Responsable de cuenta" required>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-centered">
+                <button class="btn btn-block btn-danger full-col ngdialog-submit-form" ng-click="saveMusic()">Subir Musica</button >
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

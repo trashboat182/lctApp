@@ -24,12 +24,13 @@ function DashboardController($scope,ngDialog) {
 
     $scope.showUploadImage = function(){
       $scope.dashboardImageDialog = ngDialog.open({
-        template: 'app/components/dashboard/uploadImageDialog.html',
+        template: 'app/components/dashboard/images/uploadImageDialog.html',
         className: 'ngdialog-theme-default ngdialog-transparent ngdialog-dashboard',
         closeByEscape : true,
         closeByDocument: true,
         showClose: true,
-        scope: $scope
+        scope: $scope,
+        controller: 'uploadImageController'
       });
     };
 
@@ -48,7 +49,7 @@ function DashboardController($scope,ngDialog) {
 
     $scope.showUploadMusik = function(){
       $scope.dashboardMusicDialog = ngDialog.open({
-        template: 'app/components/dashboard/uploadMusikDialog.html',
+        template: 'app/components/dashboard/music/uploadMusicDialog.html',
         className: 'ngdialog-theme-default ngdialog-transparent ngdialog-dashboard',
         closeByEscape : true,
         closeByDocument: true,

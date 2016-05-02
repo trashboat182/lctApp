@@ -67,7 +67,7 @@ function UploadVideoController($scope,fileUploadService,API_ENDPOINT,Session,Res
 
       if(!$scope.emptyObjValueExists()){
           var user = Session.getUser();
-          Rest.registerImage(user.username).customPUT($scope.video).then(function(){
+          Rest.registerVideo(user.username).customPUT($scope.video).then(function(){
               console.log('file Saved');
               $scope.dashboardVideoDialog.close();
               $scope.showSuccessVideoSaved();
